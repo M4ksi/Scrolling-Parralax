@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax-Scrolling</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <section>
+        <h2 id="text"><span>It's time for new</span><br>Adventure</h2>
+        <img src="bird1.png" id="bird1">
+        <img src="bird2.png" id="bird2">
+        <img src="forest.png" id="forest">
+        <img src="rocks.png" id="rocks">
+        <img src="water.png" id="water">
+    </section>
+    <div class="sec">
+        <h2>Parallax Scrolling Effect</h2>
+        <p>Well, what did you like the effect? If you want to download the source code click <a href="" target="_blank"><strong>here</strong></a>!</p><br>
+        <p>A forest is an area of land dominated by trees. Hundreds of definitions of forest are used throughout the world, incorporating factors such as tree density, tree height, land use, legal standing and ecological function. The Food and Agriculture Organization defines a forest as land spanning more than 0.5 hectares with trees higher than 5 meters and a canopy cover of more than 10 percent, or trees able to reach these thresholds in situ. It does not include land that is predominantly under agricultural or urban land use. Using this definition FRA 2020 found that forests covered 4.06 billion hectares or approximately 31 percent of the global land area in 2020.
+
+            Forests are the predominant terrestrial ecosystem of Earth, and are distributed around the globe. More than half of the world’s forests are found in only five countries (Brazil, Canada, China, Russian Federation and United States of America). The largest part of the forest (45 percent) is found in the tropical domain (Tropical forests), followed by the boreal, temperate and subtropical domains.
+            
+            Forests account for 75% of the gross primary production of the Earth's biosphere, and contain 80% of the Earth's plant biomass. Net primary production is estimated at 21.9 gigatonnes carbon per year for tropical forests, 8.1 for temperate forests, and 2.6 for boreal forests.
+            
+            Forests at different latitudes and elevations, and with different precipitation and evapotranspiration form distinctly different biomes: boreal forests around the North Pole, tropical moist forests and tropical dry forests around the Equator, and temperate forests at the middle latitudes. Higher elevation areas tend to support forests similar to those at higher latitudes, and amount of precipitation also affects forest composition.</p>
+    </div>
+
+    <script>
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let rocks = document.getElementById('rocks');
+        let forest = document.getElementById('forest');
+        let water = document.getElementById('water');
+        
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+
+            text.style.top = 50 + value * -0.5 + '%';
+            bird1.style.top = value * -1.5 + 'px';
+            bird1.style.left = value * 2 + 'px';
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * -5 + 'px';
+            rocks.style.top = value * -0.12 + 'px';
+            forest.style.top = value * 0.25 + 'px';
+        })
+    </script>
+</body>
+</html>
